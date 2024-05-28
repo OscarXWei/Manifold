@@ -13,6 +13,7 @@ int main(int argc, char** argv)
     return 0;
   }
   obj.Load(argv[1]);
+  double flipRatio_o = obj.detect_flips();
 
   if (argc > 3)
   {
@@ -29,5 +30,11 @@ int main(int argc, char** argv)
 
   obj.Process_Manifold(resolution);
   obj.SaveOBJ(argv[2]);
-   return 0; 
+
+  Model_OBJ output;
+  output.Load(argv[2]);
+  double flipRatio = output.detect_flips();
+  std::cout << "Ratio of flipped faces: " <<  std::abs(flipRatio - flipRatio_o) << std::endl;
+  
+  return 0; 
 }
