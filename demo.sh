@@ -8,6 +8,8 @@ make
 ./manifold ../examples/chair.obj ../examples/chairOutput.obj
 ./manifold ../examples/grass.obj ../examples/grassOutput.obj
 ./manifold ../examples/plane.obj ../examples/planeOutput.obj
+./manifold ../examples/plant.obj ../examples/plantOutput.obj
+./manifold ../examples/heart.obj ../examples/heartOutput.obj
 
 
 #./simplify -i ../examples/manifold.obj -o ../examples/simplified_manifold.obj -c 1e-2 -f 10000 -r 0.2

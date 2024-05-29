@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <thread>
+#include <future>
 
 #define ITER_NUM 20
 int g_sharp = 0;
