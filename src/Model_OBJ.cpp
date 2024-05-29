@@ -1,5 +1,9 @@
 #include "Model_OBJ.h"
 #include <queue>
+#include <fstream>
+#include <sstream>
+#include <vector>
+
 #define ITER_NUM 20
 int g_sharp = 0;
 Model_OBJ::Model_OBJ()
@@ -17,13 +21,26 @@ int Model_OBJ::Load(char* filename)
     srand(0);
     vertices.resize(V.rows());
     face_indices.resize(F.rows());
-    for (int i = 0; i < V.rows(); ++i)
-    	vertices[i] = glm::dvec3(V(i,0),V(i,1),V(i,2));
-    for (int i = 0; i < F.rows(); ++i) {
-    	face_indices[i] = glm::ivec3(F(i,0),F(i,1),F(i,2));
-	}
 
-	return 0;
+    auto parseVertices = [&]() {
+        for (int i = 0; i < V.rows(); ++i)
+            vertices[i] = glm::dvec3(V(i, 0), V(i, 1), V(i, 2));
+    };
+
+    auto parseFaces = [&]() {
+        for (int i = 0; i < F.rows(); ++i)
+            face_indices[i] = glm::ivec3(F(i, 0), F(i, 1), F(i, 2));
+    };
+
+    // Create threads
+    thread vertexThread(parseVertices);
+    thread faceThread(parseFaces);
+
+    // Wait for threads to finish
+    vertexThread.join();
+    faceThread.join();
+
+    return 0;
 }
  
 // void Model_OBJ::Calc_Bounding_Box()
