@@ -549,14 +549,15 @@ void Model_OBJ::Build_BVH()
 			vertices[face_indices[i][1]],
 			vertices[face_indices[i][2]]);
 	}
-//	bvh->updateBVH(bvs, 0, 0, bvs.size()-1);
+	bvh->updateBVH(bvs, 0, 0, bvs.size()-1);
+    // bvh->buildParallel(bvs, 0); 
 }
 
 void Model_OBJ::Process_Manifold(int resolution)
 {
 	vertices_buf = vertices;
 	face_indices_buf = face_indices;
-//	Build_BVH();
+	Build_BVH();
 	Build_Tree(resolution);
 	Construct_Manifold();
 	Project_Manifold();

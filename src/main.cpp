@@ -28,9 +28,12 @@ int main(int argc, char** argv)
   }
   printf("manifold %s %s %d\n", argv[1], argv[2], resolution);
 
+  auto start = std::chrono::high_resolution_clock::now();
   obj.Process_Manifold(resolution);
   obj.SaveOBJ(argv[2]);
-
+  auto end = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> elapsed = end - start;
+  std::cout << "Process_Manifold elapsed time: " << elapsed.count() << " seconds\n";
   Model_OBJ output;
   output.Load(argv[2]);
   double flipRatio = output.detect_flips();
